@@ -27,3 +27,23 @@ BALL_SIZE = 20  # Bola
 BALL_SPEED_X = 7  # Bola
 BALL_SPEED_Y = 7
 PADDLE_SPEED = 7  # Raqueta
+
+# Clase para la Raqueta
+class Paddle:
+    def __init__(self, x, y):
+        self.rect = pygame.Rect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT)
+
+    def move(self, up=True):
+        if up:
+            self.rect.y -= PADDLE_SPEED
+        else:
+            self.rect.y += PADDLE_SPEED
+
+        # Limitamos el movimiento dentro de la pantalla
+        if self.rect.top < 0:
+            self.rect.top = 0
+        if self.rect.bottom > SCREEN_HEIGHT:
+            self.rect.bottom = SCREEN_HEIGHT
+
+    def draw(self):
+        pygame.draw.rect(screen, WHITE, self.rect)
