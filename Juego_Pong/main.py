@@ -71,3 +71,13 @@ class Ball:
 
     def draw(self):
         pygame.draw.ellipse(screen, WHITE, self.rect)
+
+# Creación de las Raquetas y la bola (Player es la maquina, Oponnent es el usuariO)
+player_paddle = Paddle(SCREEN_WIDTH - 20, SCREEN_HEIGHT // 2 - PADDLE_HEIGHT // 2)
+opponent_paddle = Paddle(10, SCREEN_HEIGHT // 2 - PADDLE_HEIGHT // 2)
+ball = Ball()
+
+# Variables para la puntuación
+player_score = 0
+opponent_score = 0
+font = pygame.font.Font(None, 36)
