@@ -131,3 +131,12 @@ while running:
 
     # Colocamos el marcador del jugador (usuario) en el lado derecho, asegurándonos de que se ajuste al ancho del texto
     screen.blit(player_text, (SCREEN_WIDTH - player_text.get_width() - 30, 20))
+
+    # Dibujamos las Raquetas y la bola
+    player_paddle.draw()
+    opponent_paddle.draw()
+    ball.draw()
+
+    # Actualización de la pantalla
+    pygame.display.flip()
+    pygame.time.Clock().tick(60)
