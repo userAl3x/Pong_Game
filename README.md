@@ -4,3 +4,4 @@ Pong (o Tele-Pong) es un videojuego de consolas de primera generación publicado
 Pong está basado en el deporte de tenis de mesa (o ping pong).
 
 Desarrollado por Alex Jiménez en Lenguaje Python
+IDE: PyCharm JetBrains
