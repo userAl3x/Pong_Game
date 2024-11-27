@@ -140,3 +140,7 @@ while running:
     # Actualización de la pantalla
     pygame.display.flip()
     pygame.time.Clock().tick(60)
+
+# Cerramos el juego Pygame
+pygame.quit()
+sys.exit()
