@@ -117,3 +117,11 @@ while running:
     if ball.rect.right >= SCREEN_WIDTH:
         opponent_score += 1
         ball.reset()
+
+    # Dibujo de la pantalla, es decir, el Renderizar el juego
+    screen.fill(BLACK)
+    pygame.draw.aaline(screen, WHITE, (SCREEN_WIDTH // 2, 0), (SCREEN_WIDTH // 2, SCREEN_HEIGHT))
+
+    # Mostramos la puntuación
+    player_text = font.render(f"Jugador: {player_score}", True, WHITE)  # Puntuación del jugador (usuario)
+    opponent_text = font.render(f"Máquina: {opponent_score}", True, WHITE)  # Puntuación de la máquina (oponente)
