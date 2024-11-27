@@ -105,3 +105,15 @@ while running:
 
     # Movimiento de la bola
     ball.move()
+
+    # Colisiones con las Raquetas
+    if ball.rect.colliderect(player_paddle.rect) or ball.rect.colliderect(opponent_paddle.rect):
+        ball.speed_x *= -1
+
+    # Marcador del juego
+    if ball.rect.left <= 0:
+        player_score += 1
+        ball.reset()
+    if ball.rect.right >= SCREEN_WIDTH:
+        opponent_score += 1
+        ball.reset()
