@@ -125,3 +125,9 @@ while running:
     # Mostramos la puntuación
     player_text = font.render(f"Jugador: {player_score}", True, WHITE)  # Puntuación del jugador (usuario)
     opponent_text = font.render(f"Máquina: {opponent_score}", True, WHITE)  # Puntuación de la máquina (oponente)
+
+    # Colocamos el marcador de la máquina (oponente) en el lado izquierdo
+    screen.blit(opponent_text, (30, 20))
+
+    # Colocamos el marcador del jugador (usuario) en el lado derecho, asegurándonos de que se ajuste al ancho del texto
+    screen.blit(player_text, (SCREEN_WIDTH - player_text.get_width() - 30, 20))
