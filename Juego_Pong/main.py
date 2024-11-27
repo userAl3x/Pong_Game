@@ -47,3 +47,27 @@ class Paddle:
 
     def draw(self):
         pygame.draw.rect(screen, WHITE, self.rect)
+
+# Clase para la bola
+class Ball:
+    def __init__(self):
+        self.rect = pygame.Rect(SCREEN_WIDTH // 2 - BALL_SIZE // 2, SCREEN_HEIGHT // 2 - BALL_SIZE // 2, BALL_SIZE, BALL_SIZE)
+        self.speed_x = BALL_SPEED_X
+        self.speed_y = BALL_SPEED_Y
+
+    def move(self):
+        # Movimiento de la bola
+        self.rect.x += self.speed_x
+        self.rect.y += self.speed_y
+
+        # Rebote en el borde superior e inferior
+        if self.rect.top <= 0 or self.rect.bottom >= SCREEN_HEIGHT:
+            self.speed_y *= -1
+
+    def reset(self):
+        # Reinicio de la posición de la bola
+        self.rect.center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
+        self.speed_x *= -1
+
+    def draw(self):
+        pygame.draw.ellipse(screen, WHITE, self.rect)
