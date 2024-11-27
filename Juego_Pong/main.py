@@ -89,3 +89,19 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+    # Movimientos del jugador (Usuario)
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_UP]:
+        player_paddle.move(up=True)
+    if keys[pygame.K_DOWN]:
+        player_paddle.move(up=False)
+
+    # Movimiento del oponente (básico) (Máquina)
+    if opponent_paddle.rect.centery < ball.rect.y:
+        opponent_paddle.move(up=False)
+    if opponent_paddle.rect.centery > ball.rect.y:
+        opponent_paddle.move(up=True)
+
+    # Movimiento de la bola
+    ball.move()
