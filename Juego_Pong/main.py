@@ -81,3 +81,11 @@ ball = Ball()
 player_score = 0
 opponent_score = 0
 font = pygame.font.Font(None, 36)
+
+# Bucle principal del juego
+running = True
+while running:
+    # Manejo de eventos, es decir, cuando el usuario decide cerrar el juego (Finalizarlo)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
