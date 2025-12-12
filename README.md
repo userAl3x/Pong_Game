@@ -3,7 +3,6 @@
 Un juego clásico de Pong implementado en Python utilizando Pygame. El jugador compite contra una IA básica para alcanzar la mayor puntuación.
 
 **Autor:** Alex Jiménez Quiñonero  
-**Fecha:** 27/11/2024
 
 ## 📋 Descripción
 
